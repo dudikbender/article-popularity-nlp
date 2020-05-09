@@ -24,4 +24,5 @@ setup(
     author_email='bender2242@gmail.com',
     license='MIT',
     packages=['article-analysis'],
+    install_requires=['pypandoc>=1.4']
 )
