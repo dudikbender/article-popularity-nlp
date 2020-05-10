@@ -69,7 +69,6 @@ class ArticleDataset():
         # Establish variables that will create the graph
         color_included = include_color
         color_excluded = exclude_color
-        n_top_selection = n_top
         cutoff = cutoff
         bar_color = [color_included if x < cutoff else color_excluded for x in sorted_table.claps]
 
@@ -92,7 +91,7 @@ class ArticleDataset():
         plt.show()
 
         print('The articles to exclude are:\n')
-        for x in range(len(sorted_table[:10])):
+        for x in range(len(sorted_table[:n_top])):
             print('{} - {}: {} claps.'.format(x+1,sorted_table.iloc[x]['title'],sorted_table.iloc[x]['claps']))
 
 import spacy
