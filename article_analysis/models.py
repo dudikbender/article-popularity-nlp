@@ -217,8 +217,8 @@ class TopicModeller():
         lda = LDA(n_components=self.topic_count, n_jobs=-1)
         lda.fit(LDA_count_data)
 
-        # Generate the LDA visualisation
+        # Generate the LDA visualisation and display it
         LDAvis_prepared = sklearn_lda.prepare(lda, LDA_count_data, LDA_vect)
-        path = './ldavis_prepared_'+ str(self.topic_count) +'.html'
+        path = '../lda_visualisations/ldavis_prepared_'+ str(self.topic_count) +'.html'
         pyLDAvis.save_html(LDAvis_prepared, path)
         display(HTML(path))
