@@ -1,7 +1,15 @@
+# Standard python packages we will use
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 import numpy as np
 import re
+import string
+
+# NLP and text packages
+import spacy
+import en_core_web_sm
+import nltk
+from langdetect import detect
 
 class ArticleDataset():
     def __init__(self, name):
@@ -63,6 +71,7 @@ class ArticleDataset():
                           include_color='darkblue',
                           exclude_color='red',
                           cutoff_line=True):
+        '''Generates a paretto chart of the number of claps per article (bar chart) alongside the cumulative contribution to the total (line chart)'''
         ## Then plot the results in a Paretto chart, which indicates both the count and the cumulative percentage
         sorted_table = dataframe.sort_values(column_name, ascending=False).drop_duplicates().reset_index(drop=True) # Will also eliminate duplicates
         sorted_table['cumulative'] = sorted_table[column_name].cumsum()/sorted_table[column_name].sum()*100
@@ -93,13 +102,6 @@ class ArticleDataset():
         print('The articles to exclude are:\n')
         for x in range(len(sorted_table[:n_top])):
             print('{} - {}: {} claps.'.format(x+1,sorted_table.iloc[x]['title'],sorted_table.iloc[x]['claps']))
-
-import spacy
-import en_core_web_sm
-import nltk
-from langdetect import detect
-import string
-import re
 
 ## Preprocess text for analysis
 

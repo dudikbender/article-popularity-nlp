@@ -26,6 +26,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_style('whitegrid')
 
+# Bokeh packages
+from bokeh.io import output_notebook, reset_output, show
+from bokeh.models import ColumnDataSource, HoverTool, LinearColorMapper
+from bokeh.plotting import figure
+reset_output()
+output_notebook() # this will ensure that the Bokeh plot will show in the notebook (import output_file to create separate file)
+
 def dummy_regressor(X_train, X_test, y_train, y_test):
     dummy_clf = DummyRegressor()
     dummy_clf.fit(X_train, y_train)
@@ -146,13 +153,6 @@ class ArticleModeller():
         X, y = self.X, self.y
         result = predict_from_input(input_text=input_text, X=X, y=y, model=model_select)
         return int(result)
-
-# Bokeh packages
-from bokeh.io import output_notebook, reset_output, show
-from bokeh.models import ColumnDataSource, HoverTool, LinearColorMapper
-from bokeh.plotting import figure
-reset_output()
-output_notebook() # this will ensure that the Bokeh plot will show in the notebook (import output_file to create separate file)
 
 # Initialise a Count Vectorizer for the entire article text corpus
 def fit_lda(text,  number_of_topics):
