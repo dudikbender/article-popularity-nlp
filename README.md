@@ -2,7 +2,7 @@
 
 This is a capstone project for Springboard's data science course. It uses NLP, machine learning, and deep learning models to analyse articles on data science from Medium as well as predict the popularity of the article.
 
-![Word Cloud](exploration/lda_visualisations/word_cloud.png)
+![Word Cloud](https://github.com/dudikbender/article-popularity-nlp/blob/master/exploration/lda_visualisations/word_cloud.PNG)
 
 #### The Approach:
 I have used the following NLP and machine learning techniques:
