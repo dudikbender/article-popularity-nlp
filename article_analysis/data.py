@@ -167,12 +167,14 @@ class TextProcessing():
         else:
             return text
     
-    def list_of_entities(self):
+    def list_of_entities(self, entity_type=['ORG']):
         nlp = spacy.load("en_core_web_sm")
         doc = nlp(self)
         article_entities = []
+        entity_types = []
         for entity in doc.ents:
-            if (entity.label_ == 'ORG') & (entity.text not in article_entities):
+            if (entity.label_ in entity_type) & (entity.text not in article_entities):
                 article_entities.append(entity.text)
+                entity_types.append(entity.label_)
         
-        return article_entities
+        return article_entities, entity_types
