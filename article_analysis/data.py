@@ -144,7 +144,7 @@ class TextProcessing():
                         stop_words=True,
                         lemmatize=True,
                         no_digits=False):
-        '''Turn options on or off to modify the text changes that will be applied.
+        '''Function to preprocess text. Turn options on or off to modify the text changes that will be applied.
         
         Function returns a tuple of the modified text and the language detected (if that option is selected'''
         text = self
