@@ -20,6 +20,9 @@ There are clearly plenty of opportunities to extend the methods and approaches u
 > - Going deeper into entity recognition to extract insights or connections between articles or authors
 
 
+#### UPDATE: Network analysis of The Guardian articles
+I have added a new notebook analysis of articles sourced from The Guardian's API, which includes a network analysis of Named Entities in the text using spaCy and networkx.
+
 #### Please feel free to reach out with comments, questions, or to talk about extending the analysis.
 
 <b>author:</b> David Bender 
